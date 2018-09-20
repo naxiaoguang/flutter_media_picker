@@ -1,0 +1,29 @@
+PODS:
+  - Flutter (1.0.0)
+  - media_picker (0.0.1):
+    - Flutter
+  - TZImagePickerController (2.2.5)
+
+DEPENDENCIES:
+  - Flutter (from `.symlinks/flutter/ios-release`)
+  - media_picker (from `.symlinks/plugins/media_picker/ios`)
+  - TZImagePickerController
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - TZImagePickerController
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: ".symlinks/flutter/ios-release"
+  media_picker:
+    :path: ".symlinks/plugins/media_picker/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 9d0fac939486c9aba2809b7982dfdbb47a7b0296
+  media_picker: a9272acda2ea17259810d30c00c214491d13d6d9
+  TZImagePickerController: cf5c9f0ae343e2eb1912b26e4d9fa811b3159319
+
+PODFILE CHECKSUM: 9b79cccb555b67f264ebc3bfdad05647afc45b9e
+
+COCOAPODS: 1.5.0

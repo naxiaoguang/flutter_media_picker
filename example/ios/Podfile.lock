@@ -1,29 +1,43 @@
 PODS:
   - Flutter (1.0.0)
+  - GPUImage (0.1.7)
   - media_picker (0.0.1):
     - Flutter
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
   - TZImagePickerController (2.2.5)
+  - ZLPhotoBrowser (2.7.3):
+    - GPUImage
+    - SDWebImage
 
 DEPENDENCIES:
-  - Flutter (from `.symlinks/flutter/ios-release`)
+  - Flutter (from `.symlinks/flutter/ios`)
   - media_picker (from `.symlinks/plugins/media_picker/ios`)
   - TZImagePickerController
+  - ZLPhotoBrowser
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - GPUImage
+    - SDWebImage
     - TZImagePickerController
+    - ZLPhotoBrowser
 
 EXTERNAL SOURCES:
   Flutter:
-    :path: ".symlinks/flutter/ios-release"
+    :path: ".symlinks/flutter/ios"
   media_picker:
     :path: ".symlinks/plugins/media_picker/ios"
 
 SPEC CHECKSUMS:
   Flutter: 9d0fac939486c9aba2809b7982dfdbb47a7b0296
+  GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   media_picker: a9272acda2ea17259810d30c00c214491d13d6d9
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   TZImagePickerController: cf5c9f0ae343e2eb1912b26e4d9fa811b3159319
+  ZLPhotoBrowser: 8a2c8402ac36c398f7729876fb9e5171f8efceff
 
-PODFILE CHECKSUM: 9b79cccb555b67f264ebc3bfdad05647afc45b9e
+PODFILE CHECKSUM: 602d2a147c797505c2d9642c9826593802e65cc1
 
 COCOAPODS: 1.5.0

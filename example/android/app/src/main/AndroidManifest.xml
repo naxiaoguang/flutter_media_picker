@@ -48,5 +48,30 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.guoxiaoxing.phoenix.picker.ui.BaseActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.guoxiaoxing.phoenix.picker.ui.camera.CameraActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="com.guoxiaoxing.phoenix.picker.ui.picker.PickerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="com.guoxiaoxing.phoenix.picker.ui.picker.PreviewActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize|screenLayout|uiMode"
+            android:screenOrientation="sensor"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="com.guoxiaoxing.phoenix.picker.ui.editor.PictureEditActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="com.guoxiaoxing.phoenix.picker.ui.editor.TextInputActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/theme_activity_text_input"
+            android:windowSoftInputMode="stateAlwaysVisible|adjustResize" />
     </application>
 </manifest>

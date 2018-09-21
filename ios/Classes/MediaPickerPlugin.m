@@ -25,7 +25,49 @@
       _imagePickerVc.allowPickingOriginalPhoto = YES;
       _imagePickerVc.isSelectOriginalPhoto = YES;
       _imagePickerVc.sortAscendingByModificationDate = NO;
-      [self presentViewController:imagePickerVc animated:YES completion:nil];
+    
+      
+      UIViewController *viewController = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
+      if ( viewController.presentedViewController && !viewController.presentedViewController.isBeingDismissed ) {
+          viewController = viewController.presentedViewController;
+      }
+      
+    
+      [_imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto) {
+          
+          NSArray<MediaInfo *> *mediaInfoArray = @[] ;
+          for (PHAsset *asset in assets) {
+              CLLocation *location = [asset location] ;
+              PHAssetMediaType mediaType = [asset mediaType];
+              
+              NSDate *creationDate = [asset creationDate];
+              double timeInterval = [creationDate timeIntervalSince1970] ;
+              
+              MediaInfo *mediaInfo = [MediaInfo alloc] ;
+              mediaInfo.width = [asset pixelWidth] ;
+              mediaInfo.height = [asset pixelHeight] ;
+              mediaInfo.duration = [asset duration] ;
+              mediaInfo.createTime = timeInterval ;
+              if(mediaType == PHAssetMediaTypeImage){
+                  mediaInfo.mimeType = @"image/*" ;
+              }else if(mediaType == PHAssetMediaTypeVideo){
+                  mediaInfo.mimeType = @"video/*" ;
+              }else if(mediaType == PHAssetMediaTypeAudio){
+                  mediaInfo.mimeType = @"audio/*" ;
+              }
+              mediaInfo.latitude = [location horizontalAccuracy] ;
+              mediaInfo.longitude = [location verticalAccuracy] ;
+              [mediaInfoArray arrayByAddingObject:mediaInfo];
+          };
+          
+          NSError *error = nil;
+          NSData *jsonData = [NSJSONSerialization dataWithJSONObject:mediaInfoArray options:kNilOptions error:&error];
+          NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+          result(jsonString) ;
+         
+      }];
+      
+      [viewController presentViewController:_imagePickerVc animated:YES completion:nil];
      
       result([@"iOS " stringByAppendingString:[[UIDevice currentDevice] systemVersion]]);
   } else {
@@ -33,13 +75,5 @@
   }
 }
 
-- (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingPhotos:(NSArray<UIImage *> *)photos sourceAssets:(NSArray *)assets isSelectOriginalPhoto:(BOOL)isSelectOriginalPhoto {
-    _imagePickerVc.sortAscendingByModificationDate = NO;
-    _imagePickerVc.photoWidth = 1024.0;
-    _imagePickerVc.photoPreviewMaxWidth = 3072.0;
-    [self presentViewController:imagePickerVc animated:YES completion:nil];
-    
-}
-    
 
 @end

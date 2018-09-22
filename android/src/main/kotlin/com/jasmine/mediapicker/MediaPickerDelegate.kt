@@ -10,9 +10,9 @@ import android.net.Uri
 import android.util.Log
 import android.webkit.MimeTypeMap
 import com.bumptech.glide.Glide
-import com.guoxiaoxing.phoenix.core.PhoenixOption
-import com.guoxiaoxing.phoenix.core.model.MimeType
-import com.guoxiaoxing.phoenix.picker.Phoenix
+import com.jasmine.phoenix.core.PhoenixOption
+import com.jasmine.phoenix.core.model.MimeType
+import com.jasmine.phoenix.picker.Phoenix
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.PluginRegistry
@@ -27,19 +27,11 @@ class MediaPickerDelegate(private val activity: Activity) : PluginRegistry.Activ
 
     fun initPicker(options: MethodCall, result: MethodChannel.Result) {
         pendingResult = result
-        val mimeTypes = if (options.hasArgument("mediaType")) options.argument<Array<String>>("mimeTypes") else null
-        val maxSelectCount = if (options.hasArgument("maxSelectCount")) options.argument<Int>("maxSelectCount") else 1
-        var mime = MimeType.ofAll()
-        if(mimeTypes != null ){
-            if(mimeTypes.contains("image/") && mimeTypes.contains("video/")){
-                mime = MimeType.ofAll()
-            }else if(mimeTypes.contains("video/")){
-                mime = MimeType.ofVideo()
-            }else if(mimeTypes.contains("image/")){
-                mime = MimeType.ofImage()
-            }else if(mimeTypes.contains("audio/")){
-                mime = MimeType.ofAudio()
-            }
+        val maxSelectCount = if (options.hasArgument("maxCount")) options.argument<Int>("maxCount") else 1
+        val allowPickVideo = if (options.hasArgument("allowPickVideo")) options.argument<Boolean>("allowPickVideo") else false
+        var mime = MimeType.ofImage()
+        if(allowPickVideo == true ){
+            mime = MimeType.ofAll()
         }
         if(Phoenix.config().imageLoader == null){
             Phoenix.config().imageLoader { context, imageView, imagePath, type ->
@@ -52,13 +44,13 @@ class MediaPickerDelegate(private val activity: Activity) : PluginRegistry.Activ
                 .theme(PhoenixOption.THEME_DEFAULT)// 主题
                 .fileType(mime)//显示的文件类型图片、视频、图片和视频
                 .maxPickNumber(maxSelectCount)// 最大选择数量
-                .minPickNumber(0)// 最小选择数量
+                .minPickNumber(1)// 最小选择数量
                 .spanCount(4)// 每行显示个数
                 .enablePreview(true)// 是否开启预览
                 .enableCamera(false)// 是否开启拍照
                 .enableAnimation(true)// 选择界面图片点击效果
                 .enableCompress(true)// 是否开启压缩
-//                .compressPictureFilterSize(2048)//多少kb以下的图片不压缩
+                .compressPictureFilterSize(2048)//多少kb以下的图片不压缩
                 .compressVideoFilterSize(2048)//多少kb以下的视频不压缩
                 .thumbnailHeight(160)// 选择界面图片高度
                 .thumbnailWidth(160)// 选择界面图片宽度

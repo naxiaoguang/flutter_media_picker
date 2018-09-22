@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="#000000">
 
-    <com.guoxiaoxing.phoenix.picker.ui.camera.widget.AutoFitFrameLayout
+    <com.jasmine.phoenix.picker.ui.camera.widget.AutoFitFrameLayout
         android:id="@+id/previewAspectFrameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -22,7 +22,7 @@
             android:layout_gravity="center"
             android:src="@drawable/phoenix_video_play" />
 
-    </com.guoxiaoxing.phoenix.picker.ui.camera.widget.AutoFitFrameLayout>
+    </com.jasmine.phoenix.picker.ui.camera.widget.AutoFitFrameLayout>
 
     <FrameLayout
         android:id="@+id/photo_preview_container"

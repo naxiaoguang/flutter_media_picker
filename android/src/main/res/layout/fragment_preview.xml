@@ -54,7 +54,7 @@
         </LinearLayout>
     </RelativeLayout>
 
-    <com.guoxiaoxing.phoenix.picker.widget.PreviewViewPager
+    <com.jasmine.phoenix.picker.widget.PreviewViewPager
         android:id="@+id/preview_pager"
         android:layout_width="match_parent"
         android:layout_height="0dp"

@@ -25,7 +25,7 @@
             android:layout_alignParentTop="true"
             android:paddingTop="10dp">
 
-            <com.guoxiaoxing.phoenix.picker.ui.camera.widget.CameraSettingsView
+            <com.jasmine.phoenix.picker.ui.camera.widget.CameraSettingsView
                 android:id="@+id/settings_view"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
@@ -34,14 +34,14 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="15dp" />
 
-            <com.guoxiaoxing.phoenix.picker.ui.camera.widget.FlashSwitchView
+            <com.jasmine.phoenix.picker.ui.camera.widget.FlashSwitchView
                 android:id="@+id/flash_switch_view"
                 android:layout_width="40dp"
                 android:visibility="gone"
                 android:layout_height="40dp"
                 android:layout_centerInParent="true" />
 
-            <com.guoxiaoxing.phoenix.picker.ui.camera.widget.CameraSwitchView
+            <com.jasmine.phoenix.picker.ui.camera.widget.CameraSwitchView
                 android:id="@+id/front_back_camera_switcher"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
@@ -60,7 +60,7 @@
             android:layout_alignParentStart="true"
             android:background="@android:color/transparent">
 
-            <com.guoxiaoxing.phoenix.picker.ui.camera.widget.RecordButton
+            <com.jasmine.phoenix.picker.ui.camera.widget.RecordButton
                 android:id="@+id/record_button"
                 android:layout_width="75dp"
                 android:layout_height="75dp"

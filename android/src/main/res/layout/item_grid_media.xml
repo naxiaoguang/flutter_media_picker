@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.guoxiaoxing.phoenix.picker.widget.SquareRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.jasmine.phoenix.picker.widget.SquareRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -67,4 +67,4 @@
         android:textColor="@color/white"
         android:textSize="11sp"
         android:visibility="gone" />
-</com.guoxiaoxing.phoenix.picker.widget.SquareRelativeLayout>
+</com.jasmine.phoenix.picker.widget.SquareRelativeLayout>

@@ -5,7 +5,7 @@
     android:background="#000000"
     android:keepScreenOn="true">
 
-    <com.guoxiaoxing.phoenix.picker.ui.camera.widget.AutoFitFrameLayout
+    <com.jasmine.phoenix.picker.ui.camera.widget.AutoFitFrameLayout
         android:id="@+id/previewContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

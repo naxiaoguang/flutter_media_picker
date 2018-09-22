@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:padding="15dp">
 
-    <com.guoxiaoxing.phoenix.picker.widget.dialog.LoadingView
+    <com.jasmine.phoenix.picker.widget.dialog.LoadingView
         android:layout_width="30dp"
         android:layout_height="30dp" />
 

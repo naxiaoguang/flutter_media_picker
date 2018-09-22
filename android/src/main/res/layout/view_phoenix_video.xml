@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.guoxiaoxing.phoenix.picker.widget.videoview.InternalVideoView
+    <com.jasmine.phoenix.picker.widget.videoview.InternalVideoView
         android:id="@+id/video_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

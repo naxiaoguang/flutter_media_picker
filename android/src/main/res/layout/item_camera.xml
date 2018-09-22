@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.guoxiaoxing.phoenix.picker.widget.SquareRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.jasmine.phoenix.picker.widget.SquareRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/srl_camera"
@@ -26,4 +26,4 @@
         android:layout_marginTop="@dimen/phoenix_text_8"
         android:text="@string/picture_take_picture"
         android:textColor="@color/white" />
-</com.guoxiaoxing.phoenix.picker.widget.SquareRelativeLayout>
+</com.jasmine.phoenix.picker.widget.SquareRelativeLayout>

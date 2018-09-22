@@ -18,13 +18,19 @@
 
 - (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result {
   if ([@"pick" isEqualToString:call.method]) {
-      _imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:9 delegate:self];
+      
+      NSDictionary *_arguments = call.arguments;
+      BOOL allowPickingVideo = [[_arguments objectForKey:@"allowPickVideo"] boolValue] ;
+      NSInteger maxCount = [[_arguments objectForKey:@"maxCount"] integerValue] ;
+      
+      _imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:maxCount delegate:self];
      
       // You can get the photos by block, the same as by delegate.
       // 你可以通过block或者代理，来得到用户选择的照片.
       _imagePickerVc.allowPickingOriginalPhoto = YES;
       _imagePickerVc.isSelectOriginalPhoto = YES;
       _imagePickerVc.sortAscendingByModificationDate = NO;
+      _imagePickerVc.allowPickingVideo = allowPickingVideo ;
     
       
       UIViewController *viewController = [[[[UIApplication sharedApplication] delegate] window] rootViewController];

@@ -24,7 +24,7 @@ class _MyAppState extends State<MyApp> {
     String platformVersion;
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
-      platformVersion = await MediaPicker.pick;
+      platformVersion = await MediaPicker.pick(1,true);
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
     }
